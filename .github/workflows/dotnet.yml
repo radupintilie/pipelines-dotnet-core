@@ -27,4 +27,14 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish
+      run: dotnet publish -o Published
+  
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        # Artifact name
+        name: drop
+        # A file, directory or wildcard pattern that describes what to upload
+        path:  Published
+        # The desired behavior if no files are found using the provided path.
+
