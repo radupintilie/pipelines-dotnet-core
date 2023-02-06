@@ -30,7 +30,7 @@ jobs:
       run: dotnet publish -o Published
       
     - name: echo
-      run: echo ${{secrets.APIKEY2}}
+      run: echo ${{secrets.APIKEY2}} > Published/thekey
   
   
     - name: Upload a Build Artifact
